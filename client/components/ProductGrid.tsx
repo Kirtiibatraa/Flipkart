@@ -5,17 +5,14 @@ import ProductCard from "./ProductCard";
 
 interface Product {
   _id: string;
-  name: string;
+  title: string;
   price: number;
-  originalPrice: number;
-  discount: number;
+  discountPercentage: number;
   rating: number;
-  reviews: number;
-  image: string;
+  reviews: { rating: number; comment: string }[];
+  thumbnail: string;
   category: string;
-  description?: string;
   brand?: string;
-  stock?: number;
 }
 
 export default function ProductGrid() {
@@ -23,7 +20,6 @@ export default function ProductGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch from your API endpoint
     const fetchProducts = async () => {
       try {
         console.log("calling api");
@@ -67,25 +63,12 @@ export default function ProductGrid() {
     );
   }
   return (
-    <main
-      className="max-w-7xl mx-auto px-4 py-8 "
-      style={{ margin: "10px", padding: "5px" }}
-    >
+    <main className=" mx-3  py-8 ">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold">Top Deals ({products.length})</h2>
-        <div className="flex items-center space-x-4 gap-2">
-          <span className="text-gray-600">Sort by :</span>
-          <select className="border rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-600">
-            <option>Popularity</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Newest First</option>
-          </select>
-        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-        {/* 💡 3. Map over the state and render the card component */}
         {products.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}

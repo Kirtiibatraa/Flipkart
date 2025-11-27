@@ -18,7 +18,7 @@ export default function Categories() {
       style={{ margin: "10px", padding: "5px" }}
     >
       <div className="w-full flex justify-around">
-        <div className="flex items-center justify-between gap-26 overflow-x-auto">
+        <div className="flex items-center justify-between gap-7 md:gap-26 overflow-x-auto scrollbar-hide">
           {categories.map((cat, idx) => (
             <button
               key={idx}
