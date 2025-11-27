@@ -42,7 +42,6 @@ export default function FlipkartCarousel() {
 
   return (
     <div className="relative mx-3">
-      {/* Carousel Container */}
       <div className="relative h-64 md:h-80">
         {slides.map((slide, index) => (
           <div
@@ -69,7 +68,6 @@ export default function FlipkartCarousel() {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all"
@@ -86,7 +84,6 @@ export default function FlipkartCarousel() {
         <ChevronRight size={28} className="text-gray-800" />
       </button>
 
-      {/* Dots Indicator */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button

@@ -1819,25 +1819,16 @@ exports.getProducts = async (req, res) => {
 
 exports.getProductById = async (req, res) => {
   try {
-    // Get the product ID from the URL parameters (e.g., /api/products/12345)
     const productId = req.params.id;
-
-    // Find the product by ID
     const product = await Product.findById(productId);
-
-    // If no product is found, return a 404 error
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     }
-
-    // Send the single product object back
     res.status(200).json(product);
   } catch (error) {
-    // Handle invalid ID format (e.g., ID is too short)
     res.status(500).json({
       message: "Error fetching product details",
       error: error.message,
     });
   }
 };
-// Remember to export this new function at the end of the file!

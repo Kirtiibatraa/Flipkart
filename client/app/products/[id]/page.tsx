@@ -74,16 +74,13 @@ export default function ProductDetailPage() {
 
   return (
     <div className=" min-h-screen">
-      {/* Sticky Header (Mobile) */}
-      <div className="bg-white border border-gray-400  border-1 border-gray-100 sticky top-0 z-20 p-3 lg:hidden">
+      <div className="bg-white   border-1 border-gray-100 sticky top-0 z-20 p-3 lg:hidden">
         <button onClick={() => router.back()} className="flex items-center">
           <ArrowLeft size={22} className="text-blue-600" />
         </button>
       </div>
 
-      {/* Main Layout */}
       <div className="max-w-7xl mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* LEFT — IMAGES + ADD TO CART */}
         <div
           className="
     lg:col-span-4 
@@ -91,7 +88,6 @@ export default function ProductDetailPage() {
     lg:sticky lg:top-0 
   "
         >
-          {/* Thumbnails (Flipkart style sidebar) */}
           <div className="flex space-x-2 overflow-x-auto mb-4">
             {images.map((img, i) => (
               <button
@@ -106,14 +102,12 @@ export default function ProductDetailPage() {
             ))}
           </div>
 
-          {/* Main Image */}
           <div className="relative">
             <img
               src={images[selectedImage]}
               className="w-full h-[380px] object-contain"
             />
 
-            {/* Wishlist */}
             <button
               onClick={() => setIsWishlisted(!isWishlisted)}
               className="absolute top-4 right-4 bg-white p-3 rounded-full shadow-md"
@@ -139,7 +133,6 @@ export default function ProductDetailPage() {
           </div>
         </div>
 
-        {/* RIGHT — PRODUCT DETAILS */}
         <div className="lg:col-span-8 space-y-4">
           <div className="bg-white p-6 rounded-md  border-1 border-gray-100">
             <h1 className="text-2xl font-bold text-gray-900">
@@ -157,7 +150,6 @@ export default function ProductDetailPage() {
               </p>
             </div>
 
-            {/* PRICE SECTION (Flipkart style) */}
             <div className="mt-2">
               <div className="flex items-center gap-4">
                 <span className="text-4xl font-bold">

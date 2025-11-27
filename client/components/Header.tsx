@@ -31,11 +31,9 @@ export default function Header() {
               {searchTerm.length === 0 && (
                 <>
                   {" "}
-                  {/* Small Screen Placeholder */}
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none md:hidden">
                     Search for products
                   </span>
-                  {/* Large Screen Placeholder */}
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none hidden md:inline">
                     Search for products, brands and more
                   </span>
@@ -78,7 +76,6 @@ export default function Header() {
         />
       )}
 
-      {/* DRAWER */}
       <div
         className={`fixed top-0 right-0 w-64 h-full bg-white text-black shadow-lg z-50 transform transition-transform duration-300 
         ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}
